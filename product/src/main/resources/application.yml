@@ -2,5 +2,13 @@ server:
   port: 8090
   
 spring:
-  name:"Product"
- 
+    application:
+        name: product
+  
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+    instance:
+        prefer-ip-address: true
+        ip-address: ${server.address:localhost}
